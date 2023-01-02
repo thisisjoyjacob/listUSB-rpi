@@ -3,8 +3,8 @@ Python package that will list the connected USB devices on Rpi
 
 How to use it?
 
-git clone the repo
-go to the script folder
+- git clone the repo
+- go to the script folder
 
 sudo chmod 777 listUSB.sh
 ./listUSB.sh
