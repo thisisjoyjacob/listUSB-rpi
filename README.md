@@ -11,4 +11,5 @@ How to use it?
 - ./listUSB.sh
 
 OUTPUT:
+
 ![image](https://user-images.githubusercontent.com/30862754/210264980-675b4f5b-d50d-4c74-adeb-269fb93e7eb1.png)
