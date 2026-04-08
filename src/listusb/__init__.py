@@ -1,4 +1,5 @@
 """listusb-rpi: List and monitor USB devices on Raspberry Pi and Linux."""
+from __future__ import annotations
 
 from listusb._version import __version__
 from listusb.models import USBDevice, USBEvent
