@@ -100,7 +100,7 @@ pip install listusb-rpi[all]       # Everything
 
 ## Requirements
 
-- Python >= 3.9
+- Python >= 3.7
 - Linux (Raspberry Pi OS, Ubuntu, Debian, etc.)
 - `libudev-dev` for pyudev support: `sudo apt install libudev-dev`
 
