@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "listusb-rpi"
+dynamic = ["version"]
+description = "List and monitor USB devices on Raspberry Pi and Linux"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Joy Jacob"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Hardware",
+]
+keywords = ["usb", "raspberry-pi", "udev", "hardware", "iot"]
+dependencies = [
+    "click>=8.0",
+]
+
+[project.optional-dependencies]
+udev = ["pyudev>=0.24"]
+mqtt = ["paho-mqtt>=1.6,<3"]
+webhook = ["requests>=2.28"]
+all = ["listusb-rpi[udev]", "listusb-rpi[mqtt]", "listusb-rpi[webhook]"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+listusb-rpi = "listusb.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/thisisjoyjacob/listUSB-rpi"
+Repository = "https://github.com/thisisjoyjacob/listUSB-rpi"
+Issues = "https://github.com/thisisjoyjacob/listUSB-rpi/issues"
+
+[tool.hatch.version]
+path = "src/listusb/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/listusb"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP"]
